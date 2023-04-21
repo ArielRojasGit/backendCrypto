@@ -3,8 +3,8 @@ import {Usuario_criptoController} from '../controllers/usuario_criptos.controlle
 
 const router = express.Router()
 
-router.post('/update',Usuario_criptoController.updateCriptos);
 
+router.post('/conprar',Usuario_criptoController.comprarCripto)
 
 export default router
 module.exports = router

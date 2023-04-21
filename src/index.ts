@@ -1,6 +1,7 @@
 import express from 'express';
 import userRouter from './routers/user.routes'
 import CriptomonedasRouter from './routers/criptomonedas.routes' 
+import usuario_criptoRouter from './routers/usuario_criptosRouter.routes'
 import cors from "cors";
 
 const allowedOrigins = ['http://localhost:4200']
@@ -18,12 +19,11 @@ app.get('/ping',(_req, res)=>{
 }) 
 
 app.use('/user', userRouter)
+app.use('/accionescomprventa',usuario_criptoRouter)
 app.use('/criptomonedas', CriptomonedasRouter)
+
 
 
 app.listen(PORT, () =>{
     console.log(`Servidor escuchando en el puerto ${PORT}`)
 })
-
-
-

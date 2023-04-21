@@ -1,5 +1,7 @@
 import{Sequelize} from "sequelize-typescript";
 import { usuarioCriptomonedasPojo } from "../models/usuario_criptos.model";
+import { UserPojo } from "../models/user.model";
+import { criptomonedasPojo } from "../models/criptomonedas.model";
 
 
 export const usuario_criptos_connect = ()=>
@@ -26,7 +28,7 @@ export const usuario_criptos_connect = ()=>
         }
     })
 
-    dbConfig.addModels([usuarioCriptomonedasPojo])//criptomonedasPojo es la tabla
+    dbConfig.addModels([usuarioCriptomonedasPojo, UserPojo, criptomonedasPojo])//criptomonedasPojo es la tabla criptomonedas userPojo y criptomonedas pojo son sus tablas esto indica a las tablas que se puede conectar, que tiene acceso
     const db : any = {}
     db.Sequelize = Sequelize//con esto se indica el tipo de interfaz que tendrá
     db.sequelize = dbConfig//con esto se indica la configuración que hemos hecho arriba
